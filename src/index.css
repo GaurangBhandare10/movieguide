@@ -1,13 +1,236 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    background-color:#5CDB95 ;
 }
+/* navbar styling */
+.navbar{
+    background-color: #05386b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 18px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+}
+
+.search-container input, .btn{
+    padding: 5px 10px;
+    border: none;
+    font-size: 16px;
+
+}
+
+.search-container input{
+    border-radius: 3px 0 0 3px;
+}
+.search-container .btn{
+    border-radius: 0 3px 3px 0;
+    background-color: #05386b;
+    color: white;
+    cursor: pointer;
+}
+
+.search-container .btn:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255,0.5), 
+                 0 0 20px rgba(255, 255, 255,0.5), 
+                 0 0 30px rgba(255, 255, 255,0.5);
+    transition: text-shadow 0.3s ease-in-out;
+  }
+
+  .main{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-block: 38px;
+  }
+
+  .main .section{
+    max-width: 100%;
+    margin: 0 auto;
+    margin-block: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+
+  .movie-container{
+    display: flex;
+    background-color: aliceblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    width: 80%;
+  }
+
+  .movie-poster img{
+    max-height: 450px;
+    margin-right: 30px;
+    border-radius: 5px 0 0 5px;
+    max-width: 100%;
+  }
+
+  .movie-info{
+    padding-inline: 15px;
+  }
+
+  .movie-info p {
+    font-size: 18px;
+    margin-block: 16px;
+    line-height: 24px;
+  }
+
+
+  .movie-info h2{
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 0 12px 0;
+  }
+
+  .movie-info h2+p{
+    text-align: center;
+  }
+
+  .movie-info .movie-genre{
+    display: flex;
+    justify-content: center;
+    margin-block: 5px;
+    overflow-x: auto;
+
+  }
+  .warning{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+
+  .movie-info .movie-genre p{
+    background-color: #05386b;
+    color: white;
+    padding: 5px 14px;
+    margin-inline: 5px;
+    border: 2px solid black;
+    border-radius: 6px;
+    font-weight: 700;
+    bottom: 0;
+}
+
+
+
+
+  /* footer styling */
+  .footer{
+    text-align: center;
+    background-color: #05386b;
+    color: white;
+    padding-block: 20px;
+    margin-top: 40px;
+    font-size: 20px;
+  }
+
+/* Responsive CSS */
+
+/* For screens smaller than 768px (e.g., mobile devices) */
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .search-container input,
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .footer {
+    padding-block: 16px;
+  }
+
+  .main {
+    margin-block: 20px;
+  }
+
+  .movie-container {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    height: calc(95vh - 150px);
+    /* Adjust as needed */
+    overflow-y: auto;
+  }
+
+  .movie-poster img {
+    height: 324px ;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-top: 5px;
+  }
+  .main .section{
+    margin-block: 0px;
+  }
+
+  .movie-info {
+    text-align: center;
+  }
+
+  .movie-info h2 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  .movie-info p {
+    font-size: 14px;
+    margin-block: 8px;
+  }
+
+  .warning {
+    font-size: 15px;
+  }
+}
+
+/* For screens between 768px and 1200px */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .movie-container {
+    width: 90%;
+    margin: 0 auto;
+   
+  }
+
+
+  .movie-poster img {
+    height:100%;
+    margin-right: 20px;
+    object-fit: cover;
+  }
+
+  .movie-info {
+    padding-inline: 10px;
+  }
+
+  .movie-info h2 {
+    font-size: 28px;
+    margin: 20px 0 12px;
+  }
+
+  .movie-info p {
+    font-size: 16px;
+    margin-block: 16px;
+  }
+}
+
+
